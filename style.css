@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+:root {
+    --theme-color: #385f7a;
+    --theme-hover-color: #64859c;
+    --bg-color: #15354d;
+    --text-color: #eee;
+    --text-hover-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    background: var(--theme-hover-color);
+    font-size: 1.5rem;
+}
+    nav h1 {
+        font-size: 2rem;
+        color: var(--text-hover-color);
+    }
+
+    nav ul.themes {
+        display: flex;
+        list-style-type: none;
+    }
+        ul.themes li {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: 0 1rem;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+        ul.themes li:nth-child(1) {
+            background: red;
+        }
+        ul.themes li:nth-child(2) {
+            background: #eee;
+        }
+        ul.themes li:nth-child(3) {
+            background: #222;
+        }
+        ul.themes li:nth-child(4) {
+            background: blue;
+        }
+
+main {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 98%;
+    margin: .5rem auto;
+}
+
+.dev {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    width: 23%;
+    margin: 1%;
+    padding: 1rem;  
+    background: var(--theme-color);
+    border: 1px solid var(--theme-color);
+    transition: all .4s;
+    grid-gap: .5rem;
+    grid-template-areas: 
+        "N N N N N N"
+        "A A A A G G"
+        "A A A A G G"
+        "A A A A P P"
+        "A A A A T F";
+}
+    .dev:hover {
+        border: 1px solid #fff;
+    }
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    /* padding: 1rem; */
+    background: var(--bg-color);
+    transition: all .4s;
+    /* border: 1px solid var(--bg-color); */
+    /* border-radius: .5rem; */
+}
+    .links:hover {
+        /* border: 1px solid #eee; */
+        background: var(--theme-hover-color);
+    }
+    .links i {
+        color: var(--text-color);
+        font-size: 1.25rem;
+        transition: all .4s;
+    }
+        .links:hover i {
+            color: var(--text-hover-color);
+            font-size: 1.75rem;
+        }
+.dev-name {
+    grid-area: N;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dev-avatar {
+    grid-area: A;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overlay {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    transition: all .4s;
+}
+    .overlay:hover {
+        opacity: 1;
+    }
+    .overlay i {
+        color: red;
+        font-size: 4rem;
+    }
+    .dev-avatar img {
+        width: 100%;
+        height: auto;
+    }
+.dev-github {
+    grid-area: G;
+}
+    .dev-github i {
+        font-size: 3rem;
+    }
+        .dev-github:hover i {
+            font-size: 3.5rem;
+        }
+.dev-patreon {
+    grid-area: P;
+}
+.dev-twit {
+    grid-area: T;
+}
+.dev-face {
+    grid-area: F;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1250px) {
+    /* html {
+        font-size: 12px;
+    } */
+    .dev {
+        width: 31.33%;
+    }
+}
+
+@media screen and (min-width: 568px) and (max-width: 900px) {
+    ul.themes li {
+        width: .75rem;
+        height: .75rem;
+        margin: 0 .25rem;
+    }
+    .dev {
+        width: 48%;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 567px) {
+    nav h1 {
+        font-size: 1rem;
+    }
+    ul.themes li {
+        width: .75rem;
+        height: .75rem;
+        margin: 0 .25rem;
+    }
+    .dev {
+        width: 96%;
+        margin: 2%;
+    }
+}
