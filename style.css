@@ -143,6 +143,14 @@ main {
     .overlay i {
         color: red;
         font-size: 4rem;
+        z-index: 2;
+    }
+    .overlay:before {
+        position: absolute;
+        content: '';
+        width: 2rem; height: 2rem;
+        background: #fff;
+        z-index: 1;
     }
     .dev-avatar img {
         width: 100%;
