@@ -5,3 +5,7 @@
     --text-color: #333;
     --text-hover-color: #111;
 }
+
+.dev:hover {
+    box-shadow: 0 0 10px #000;
+}
